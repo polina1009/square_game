@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <span>
+            x = <input id="x" type="text" size="20" /><br>
+            y = <input id="y" type="text" size="20" /><br>
+            <button style="width:50px;height:25px" onclick="aa()">x+y</button>
+            <input id="answer" type="text" size="20" value="result"/><br>
+            <button style="width:50px;height:25px" onclick="mm()">x*y</button>
+            <input id="answer1" type="text" size="20" value="result"/>
+        </span>
+
+
+        <script>
+
+            function summ(a, b) {
+                var c = a + b;
+
+                return c;
+            }
+            
+            function multiply(a, b) {
+                var c = a * b;
+
+                return c;
+            }
+
+            function aa() {
+                var x_str = document.getElementById('x').value;
+                var y_str = document.getElementById('y').value;
+
+
+                var x_int = parseInt(x_str);
+                var y_int = parseInt(y_str);
+                var res = summ(x_int, y_int);
+
+                document.getElementById('answer').value = res;
+            }
+
+            function mm() {
+                var x_st = document.getElementById('x').value;
+                var y_st = document.getElementById('y').value;
+
+                var x_mult = parseInt(x_st);
+                var y_mult = parseInt(y_st);
+                var res1 = multiply(x_mult, y_mult);
+
+                document.getElementById('answer1').value = res1;
+            }
+
+        </script>
+    </body>
+</html>
