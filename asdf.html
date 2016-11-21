@@ -5,12 +5,32 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    var mass = [2, 4, 45, 88, 129];
 
-    mass.forEach(function(item, i, mass){
-        console.log(i + ": " + item + "(massiv:"+ mass + ")" );
-    })
+<div id="aaa" style="position: absolute; width:50px; height:50px; border:1px solid red; left: 100px;"></div>
+
+<script>
+//    var mass = [2, 4, 45, 88, 129];
+//
+//    mass.forEach(function(item, i, mass){
+//        console.log(i + ": " + item + "(massiv:"+ mass + ")" );
+//    })
+
+
+function step() {
+    var left = parseInt(document.getElementById('aaa').style.left);
+    left += 1;
+    document.getElementById('aaa').style.left = `${left}px`;
+
+
+    requestAnimationFrame(step);
+}
+
+step();
+
+//setInterval(function() {
+//    step();
+//}, 10);
+
 
 
 

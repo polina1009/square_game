@@ -1,6 +1,7 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var score = 0;
+var speed = 2;
 
 
 function init() {
@@ -17,7 +18,7 @@ function start_game() {
 
     setInterval(function () {
         add_sguare()
-    }, 2500)
+    }, 50)
 }
 
 function add_sguare() {
@@ -37,6 +38,21 @@ function add_sguare() {
     }
 
     squares.push(square_borders);
+
+    // запускаем движение
+    function animate_square() {
+        ctx.clearRect(square_borders.left_b, square_borders.top_b, 20, 20);
+        ctx.fillRect(square_borders.left_b, square_borders.top_b+speed, 20, 20);
+
+        square_borders.top_b += speed;
+
+        if(square_borders.top_b >= canvas.clientHeight) {
+            square_borders.top_b = 0;
+        }
+
+        requestAnimationFrame(animate_square);
+    }
+    animate_square();
 }
 
 document.getElementById('canvas').onclick = function(event) {
@@ -97,5 +113,7 @@ document.getElementById('canvas').onclick = function(event) {
 //
 //     //requestAnimationFrame(animate);
 // }
+
+//
 //
 // document.body.onload = animate;
