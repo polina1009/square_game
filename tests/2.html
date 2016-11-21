@@ -1,0 +1,31 @@
+<!-- Задание: по нажатию на кнопку менять её цвет (цвет бордера) на рандомный -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <button id="but" style="border-color: red; border-style: solid;" onclick="ch()">go</button>
+
+        <script>
+            
+            function ch() {
+
+                var r_color = Math.floor(Math.random()*255);
+                var g_color = Math.floor(Math.random()*255);
+                var b_color = Math.floor(Math.random()*255);
+                var st = "border-color: rgb("+r_color+","+g_color+","+b_color+"); border-width: 10px;";
+
+
+                console.log(st);
+
+                document.getElementById('but').style = st;
+
+            }
+
+        </script>
+    </body>
+</html>

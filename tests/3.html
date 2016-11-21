@@ -1,0 +1,60 @@
+<!-- Задание: по нажатию на кнопку полностью менять её бордер на рандомный: -->
+<!-- цвет на рандомный -->
+<!-- ширину на случайную, в пределах от 1px до 10px -->
+<!-- style на случайный из списка: [dotted | dashed | solid | double | groove | ridge | inset | outset] -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <button id="but"; style="border-color: red; border-style: solid; border-width: 2px;" onclick="ch()">go</button>
+
+        <script>
+            function ch() {
+
+                var r_color = Math.floor(Math.random()*255);
+                var g_color = Math.floor(Math.random()*255);
+                var b_color = Math.floor(Math.random()*255);
+                var wid = Math.floor(Math.random()*99+1);
+
+
+                var rnd = Math.floor(Math.random()*8);
+
+                //console.log(rnd);
+
+                var mass = ['dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'];
+
+                var random_style = mass[rnd];
+                //console.log("###", mass[rnd]);
+
+
+
+
+//                var st = "border-color: rgb("+r_color+","+g_color+","+b_color+'); border-width: ' + wid + "px";
+                var st = `border-color: rgb( ${r_color}, ${g_color}, ${b_color}); border-width: ${wid}px; border-style: ${random_style}`;
+
+
+
+
+
+
+                var sssttt = st;
+
+                //console.log(sssttt);
+
+                document.getElementById('but').style = sssttt;
+
+
+
+
+
+
+                //Math.floor(Math.random() * 9) + 1;
+            }
+        </script>
+    </body>
+</html>
