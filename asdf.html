@@ -9,23 +9,35 @@
 <div id="aaa" style="position: absolute; width:50px; height:50px; border:1px solid red; left: 100px;"></div>
 
 <script>
-//    var mass = [2, 4, 45, 88, 129];
+    var mass = [2, 4, 45, 88, 129];
+
+
+
+    var flag = false;
+
+    for(i=0; i< mass.length; i++) {
+        console.log(mass[i]);
+
+        if(!flag && i == 3) {
+            flag = true;
+            console.log('###', mass[i], i);
+            mass.splice(i--, 1);
+        }
+    }
+
+    console.log(mass);
+
+
+//function step() {
+//    var left = parseInt(document.getElementById('aaa').style.left);
+//    left += 1;
+//    document.getElementById('aaa').style.left = `${left}px`;
 //
-//    mass.forEach(function(item, i, mass){
-//        console.log(i + ": " + item + "(massiv:"+ mass + ")" );
-//    })
-
-
-function step() {
-    var left = parseInt(document.getElementById('aaa').style.left);
-    left += 1;
-    document.getElementById('aaa').style.left = `${left}px`;
-
-
-    requestAnimationFrame(step);
-}
-
-step();
+//
+//    requestAnimationFrame(step);
+//}
+//
+//step();
 
 //setInterval(function() {
 //    step();
